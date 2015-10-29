@@ -87,7 +87,6 @@ toDataURL()
     <style>
         canvas {
             background-color: cornsilk;
-            float: left;
             margin-left: 10px;
         }
     </style>
@@ -273,6 +272,43 @@ toDataURL()
         }
 
 
+        function draw5() {
+
+            var mCanvas = document.getElementById("mCanvas5");
+            var canvasContext = mCanvas.getContext("2d");
+
+            var dropBox = document.getElementById("dropBox");
+            var imgBox = document.getElementById("imgBox");
+            dropBox.ondragover = function (e) {
+                e.preventDefault();
+            }
+
+            dropBox.ondrop = function (e) {
+                e.preventDefault();
+                var selectedFiles = e.dataTransfer.files;
+                if (selectedFiles && selectedFiles.length > 0) {
+                    var fileReader = new FileReader();
+                    fileReader.onload = function (e) {
+                        imgBox.src = fileReader.result;
+                        imgBox.onload = function () {
+                            canvasContext.drawImage(imgBox, 0, 0);
+                            var imgData = canvasContext.getImageData(0, 0, mCanvas.width, mCanvas.height);
+                            // 反转颜色
+                            for (var i = 0; i < imgData.data.length; i += 4) {
+                                imgData.data[i] = 255 - imgData.data[i];
+                                imgData.data[i + 1] = 255 - imgData.data[i + 1];
+                                imgData.data[i + 2] = 255 - imgData.data[i + 2];
+                                imgData.data[i + 3] = 255;
+                            }
+                            canvasContext.putImageData(imgData, 0, 0);
+                        }
+                    }
+                    fileReader.readAsDataURL(selectedFiles[0]);
+                }
+            }
+        }
+
+
         window.onload = function () {
             draw1();
             setInterval(function () {
@@ -282,6 +318,7 @@ toDataURL()
                 draw3();
             }, 500);
             draw4();
+            draw5();
         }
     </script>
 </head>
@@ -303,6 +340,15 @@ toDataURL()
 <div>
     <canvas id="mCanvas4" width="300" height="300">
     </canvas>
+</div>
+
+<div style="float: left;">
+    <canvas id="mCanvas5" width="300" height="300">
+    </canvas>
+</div>
+
+<div id="dropBox" style="background-color: bisque;width: 300px;height: 300px;float: left;">
+    <img src="" id="imgBox"/>
 </div>
 </body>
 </html>
