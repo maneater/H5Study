@@ -102,7 +102,7 @@ toDataURL()
             canvasContext.beginPath();
             canvasContext.arc(50, 50, 50, 0, Math.PI * 2, true);
             canvasContext.closePath();
-            canvasContext.fillStyle = "#FF0000"
+            canvasContext.fillStyle = "#FF0000";
             canvasContext.strokeStyle = "#00FF00";
             canvasContext.fill();
             canvasContext.stroke();
@@ -174,7 +174,7 @@ toDataURL()
             canvasContext.save();
             canvasContext.beginPath();
             canvasContext.arc(150, 150, 15, 0, Math.PI * 2, true);
-            canvasContext.fillStyle = "#FF0000"
+            canvasContext.fillStyle = "#FF0000";
             canvasContext.shadowOffsetX = 1;
             canvasContext.shadowOffsetY = 1;
             canvasContext.shadowColor = "#000000";
@@ -186,7 +186,7 @@ toDataURL()
             canvasContext.beginPath();
             canvasContext.arc(150, 150, 8, 0, Math.PI * 2, true);
             canvasContext.closePath();
-            canvasContext.fillStyle = "#FF0000"
+            canvasContext.fillStyle = "#FF0000";
             canvasContext.shadowBlur = 5;
             canvasContext.shadowOffsetX = 2;
             canvasContext.shadowOffsetY = 2;
@@ -255,9 +255,8 @@ toDataURL()
         function draw4() {
             var mCanvas = document.getElementById("mCanvas4");
             var canvasContext = mCanvas.getContext("2d");
-            canvasContext.fillStyle = "#FF0000"
+            canvasContext.fillStyle = "#FF0000";
             canvasContext.strokeStyle = "#00FF00";
-            canvasContext.textAlign = "textAlign=center"
 
             // Show the different textAlign values
             canvasContext.textAlign = "start";
