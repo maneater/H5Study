@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖放本地资源</title>
+    <script>
+        function logObj(target) {
+            console.log(target);
+            for (var key in target) {
+                console.log(key + "-->" + target[key]);
+            }
+        }
+        window.onload = function () {
+            var showBox = document.getElementById("showBox");
+            showBox.ondragover = function (e) {
+                e.preventDefault();
+            }
+
+            showBox.ondrop = function (e) {
+                e.preventDefault();
+//                logObj(e);
+                var selectedFiles = e.dataTransfer.files;
+                if (selectedFiles && selectedFiles.length > 0) {
+                    var fileReader = new FileReader();
+                    fileReader.onload = function (e) {
+                        showBox.innerHTML = "<img src='" + fileReader.result + "'\">";
+                    }
+                    fileReader.readAsDataURL(selectedFiles[0]);
+                }
+            }
+        }
+
+
+    </script>
+    <style>
+        #showBox {
+            width: 200px;
+            height: 200px;
+            display: inherit;
+            background-color: cornsilk;
+        }
+    </style>
+</head>
+<body>
+
+<div id="showBox">
+
+</div>
+
+</body>
+</html>
