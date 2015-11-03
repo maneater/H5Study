@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link media="only screen and (max-width:960px)" type="text/css" rel="stylesheet" href="mediaquery.css"/>
+    <style>
+
+        .menu {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .menu li {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            flex: 1 1 100%;
+            transition: background-color 0.4s;
+            -moz-transition: background-color 0.4s;	/* Firefox 4 */
+            -webkit-transition: background-color 0.4s;	/* Safari 和 Chrome */
+            -o-transition: background-color 0.4s;	/* Opera */
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+        .menu li:nth-child(1) {
+            background-color: blueviolet;
+        }
+
+        .menu li:nth-child(2) {
+            background-color: #e26050;
+        }
+
+        .menu li:nth-child(3) {
+            background-color: #b0e275;
+        }
+
+        .menu li:nth-child(4) {
+            background-color: #35e2bc;
+        }
+
+        .menu li:nth-child(5) {
+            background-color: #d9d2e2;
+        }
+
+        .menu li:nth-child(6) {
+            background-color: #e20f1d;
+        }
+
+        .menu li:hover {
+            background-color: brown;
+        }
+
+        @media screen and (min-width: 480px) {
+            body {
+                background-color: aqua;
+            }
+
+            .menu li {
+                flex: 1 1 50%;
+            }
+        }
+
+        @media screen and (min-width: 760px) {
+            .menu {
+                flex-flow: row nowrap;
+            }
+
+            .menu li {
+                flex: 1 1 50%;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+<ul class="menu">
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">ANDROID</a></li>
+    <li><a href="#">iOS</a></li>
+    <li><a href="#">WINDOWS PHONE</a></li>
+    <li><a href="#">BLACK BARRY</a></li>
+</ul>
+</body>
+</html>

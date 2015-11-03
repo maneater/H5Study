@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //sessionStroage
+        function save() {
+            localStorage.setItem("input", document.getElementsByName("input")[0].value);
+        }
+        function get() {
+            if (localStorage.getItem("input")) {
+                document.getElementsByName("input")[0].value = localStorage.getItem("input");
+            } else {
+
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+<input type="text" name="input">
+<input type="button" value="get" onclick="get();">
+<input type="button" value="save" onclick="save();">
+
+</body>
+</html>

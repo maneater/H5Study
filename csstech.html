@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="csstech.css"/>
+</head>
+<body>
+
+<div>pading并不会占用元素的已有宽度</div>
+<div class="border10"><p>class = "border10"</p></div>
+<div class="pading10"><p>class = "pading10"</p></div>
+<div class="pading10 border10"><p>class = "pading10" && class = "border10"</p></div>
+<p> div是一个块级元素。这意味着它的内容自动地开始一个新行。</p>
+
+<div style="display: inline;">display: inline;</div>
+<div>2222</div>
+
+<span>div这样的块级元素，就会自动占据一定矩形空间，可以通过设置高度、宽度、内外边距等属性，来调整的这个矩形的样子；与之相反，像“span”“a”这样的行内元素，则没有自己的独立空间，它是依附于其他块级元素存在的，因此，对行内元素设置高度、宽度、内外边距等属性，都是无效的。</span>
+
+
+<p style="position: fixed;top: 10px;right: 10px;width: 200px;">absolute<br/>
+    生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。
+    元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。
+    <br/>
+    fixed <br/>
+    生成绝对定位的元素，相对于浏览器窗口进行定位。
+    元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。 <br/>
+    relative <br/>
+    生成相对定位的元素，相对于其正常位置进行定位。
+    因此，"left:20" 会向元素的 LEFT 位置添加 20 像素。实际上该元素依然占据文档中原有的位置，只是视觉上相对原来的位置有移动 <br/>
+    static <br/> 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。 <br/>
+    inherit <br/>规定应该从父元素继承 position 属性的值。</p>
+
+</body>
+</html>
