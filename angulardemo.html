@@ -15,7 +15,7 @@
     <input type="text" class="form-control" ng-model="task" ng-required="true" required/>
     <span class="input-group-btn"><button class="btn btn-default" ng-click="add()">subimt</button></span>
 </div>
-<div>{{task}}</div>
+<div class="{{task}}">{{task}}</div>
 <div ng-hide="tasks.length==0">
     <h4>To-Do-List</h4>
     <ul class="list-group">
